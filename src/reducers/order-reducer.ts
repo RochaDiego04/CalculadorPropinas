@@ -42,11 +42,17 @@ export const orderReducer = (
       order,
     };
   }
+
   if (action.type === "remove-item") {
+    const order: OrderItem[] = state.order.filter(
+      (item) => item.id !== action.payload.id
+    );
     return {
       ...state,
+      order,
     };
   }
+
   if (action.type === "place-order") {
     return {
       ...state,
