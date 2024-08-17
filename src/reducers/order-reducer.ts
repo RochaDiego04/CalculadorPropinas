@@ -59,8 +59,10 @@ export const orderReducer = (
     };
   }
   if (action.type === "add-tip") {
+    const tip = action.payload.value;
     return {
       ...state,
+      tip,
     };
   }
   return state;
